@@ -1,0 +1,111 @@
+# 25 Number 🎮 (Smart Computer)
+import random
+import time
+
+print("-------------| Rules of the Game |---------------")
+print("| Rule No.1 : Pick 1, 2, or 3 numbers per turn  |")
+print("| Rule No.2 : The player who gets 25 Loses      |")
+print("-------------------------------------------------\n")
+time.sleep(1)
+
+option_to_continue = input("-- Do you wish to continue?(Yes/No)-- \n")
+print(" ")
+
+if option_to_continue.lower() == "yes":
+    print("First we will play a coin toss 🪙 to decide who will start the game first")
+    time.sleep(1)
+    print("\nWelcome to the game 🎮\n")
+    time.sleep(1)
+
+    options = ["Head", "Tail"]
+    player_option = input("Enter your option (Head/Tail): ").title()
+    final_result = random.choice(options)
+
+    print("Tossing the coin... 🪙\n")
+    time.sleep(2)
+    print("Coin shows: " + final_result + "\n")
+
+    if player_option == final_result:
+        print("You won the toss 🎉 You will start first\n")
+        start = True
+    else:
+        print("You lost the toss ❌ Computer will start first\n")
+        start = False
+
+    total = 0
+    print("Let's start the 25 Number Game 🎮\n")
+    time.sleep(1)
+
+    while total < 25:
+        if start:
+            # Player turn
+            player_choice = 0
+            while player_choice not in [1, 2, 3] or total + player_choice > 25:
+                player_choice = int(input("Enter your choice (1, 2, 3): "))
+                if player_choice not in [1, 2, 3] or total + player_choice > 25:
+                    print("Invalid choice! Try again.\n")
+
+            total += player_choice
+            print("You chose " + str(player_choice))
+            print("Total is " + str(total) + "\n")
+            time.sleep(1)
+
+            if total == 25:
+                print("You reached 25. You Lose! Computer Wins 🎉")
+                break
+
+            # Computer smart turn
+            if total % 4 == 0:
+                computer_choice = random.randint(1, 3)  # can't force, just random
+            else:
+                computer_choice = 4 - (total % 4)
+
+            if total + computer_choice > 25:  # safety check
+                computer_choice = random.randint(1, 3)
+
+            total += computer_choice
+            print("Computer chose " + str(computer_choice))
+            print("Total is " + str(total) + "\n")
+            time.sleep(1)
+
+            if total == 25:
+                print("Computer reached 25. Computer Loses! You Win 🎉")
+                break
+
+        else:
+            # Computer smart turn first
+            if total % 4 == 0:
+                computer_choice = random.randint(1, 3)
+            else:
+                computer_choice = 4 - (total % 4)
+
+            if total + computer_choice > 25:
+                computer_choice = random.randint(1, 3)
+
+            total += computer_choice
+            print("Computer chose " + str(computer_choice))
+            print("Total is " + str(total) + "\n")
+            time.sleep(1)
+
+            if total == 25:
+                print("Computer reached 25. Computer Loses! You Win 🎉")
+                break
+
+            # Player turn
+            player_choice = 0
+            while player_choice not in [1, 2, 3] or total + player_choice > 25:
+                player_choice = int(input("Enter your choice (1, 2, 3): "))
+                if player_choice not in [1, 2, 3] or total + player_choice > 25:
+                    print("Invalid choice! Try again.\n")
+
+            total += player_choice
+            print("You chose " + str(player_choice))
+            print("Total is " + str(total) + "\n")
+            time.sleep(1)
+
+            if total == 25:
+                print("You reached 25. You Lose! Computer Wins 🎉")
+                break
+
+else:
+    print("\nThank you for visiting! Goodbye 👋")

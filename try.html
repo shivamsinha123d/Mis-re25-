@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>25 Number Game 🎮</title>
+  <style>
+    #game-container iframe {
+      border: 2px solid #0f0;
+      border-radius: 8px;
+      background-color: black;
+      width: 100%;
+      height: 350px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    body {
+      margin: 0;
+      padding: 1rem;
+      font-family: sans-serif;
+      background-color: white;
+      color: black;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 1rem auto;
+      text-align: center;
+    }
+
+    .one {
+      list-style: none;
+      font-size: 0.9rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .myprojects {
+      list-style: none;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 800px;
+      background-color: #f4f4f4;
+      border-radius: 6px;
+    }
+
+    .myprojects li {
+      margin: 0.5rem 0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 0.5rem 0;
+    }
+
+    h5 {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* Menu / Footer */
+    .menu {
+      list-style: none;
+      padding: 0.5rem;
+      margin: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      background-color: rgb(237, 234, 234);
+      border-radius: 6px;
+    }
+
+    .menu li {
+      display: inline-block;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: blue;
+      font-size: 1rem;
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .menu {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .menu li {
+        margin: 0.5rem 0;
+      }
+
+      .one,
+      .myprojects {
+        padding: 0.8rem;
+        margin: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>25 Number 🎮</h1>
+
+  <main>
+    <h2>Welcome to the 25 Number Game</h2>
+    <p>Pick wisely… the one who reaches 25 loses!</p>
+
+    <button onclick="startGame()">▶ Start Game</button>
+    <button id="replay-btn" onclick="replayGame()" style="display:none;">🔄 Replay</button>
+
+    <div id="game-container" style="margin-top:20px;"></div>
+  </main>
+
+  <!-- Projects Section -->
+  <ul class="myprojects">
+    <h5>🚀 Projects Highlight</h5>
+    <li><a href="algorithm.html">📝 Algorithm</a></li><hr>
+    <li><a href="about.html">ℹ️ About the Project</a></li><hr>
+    <li><a href="code.html">💻 Code</a></li>
+  </ul>
+
+  <!-- Footer / Social -->
+  <ul class="menu">
+    <li><a href="mailto:pranavharel@gmail.com">📧 Pranav Dhondiram Harel</a></li>
+    <li><a href="mailto:shivamsinha123d@gmail.com">📧 Shivam Kumar Sinha</a></li>
+    <li><a href="mailto:vaidiktanna123@gmail.com">📧 Waidik Tanna</a></li>
+  </ul>
+
+  <script>
+    function startGame() {
+      const container = document.getElementById("game-container");
+      container.innerHTML = `<iframe src="https://trinket.io/embed/python/69c401ecbd8b?outputOnly=true&start=result"></iframe>`;
+      document.getElementById("replay-btn").style.display = "inline-block";
+    }
+
+    function replayGame() {
+      startGame();
+    }
+  </script>
+
+</body>
+</html>
