@@ -27,6 +27,10 @@ h1 {
   
   font-size: 2rem;
 }
+.gold {
+ 
+color: rgb(253, 208, 84);
+}
 
 .menu {
   list-style: none;
